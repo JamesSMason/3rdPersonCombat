@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestPlayerState : PlayerBaseState
 {
-    private float timer = 5f;
+    private float timer = 0f;
 
     public TestPlayerState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -10,22 +10,22 @@ public class TestPlayerState : PlayerBaseState
 
     public override void Enter()
     {
-        Debug.Log("Enter");
+        stateMachine.InputReader.JumpEvent += OnJump;
     }
 
     public override void Tick(float deltaTime)
     {
-        timer -= deltaTime;
+        timer += deltaTime;
         Debug.Log(timer);
-
-        if (timer <= 0)
-        {
-            stateMachine.SwitchState(new TestPlayerState(stateMachine));
-        }
     }
 
     public override void Exit()
     {
-        Debug.Log("Exit");
+        stateMachine.InputReader.JumpEvent -= OnJump;
+    }
+
+    private void OnJump()
+    {
+        stateMachine.SwitchState(new TestPlayerState(stateMachine));
     }
 }
