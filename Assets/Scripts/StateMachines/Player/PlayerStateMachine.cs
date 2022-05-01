@@ -6,6 +6,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public CharacterController CharacterController { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
+    [field: SerializeField] public float RotationDamping { get; private set; }
 
     public Transform MainCameraTransform = null;
 
@@ -16,6 +17,6 @@ public class PlayerStateMachine : StateMachine
 
     void Start()
     {
-        SwitchState(new TestPlayerState(this));
+        SwitchState(new PlayerFreeLookState(this));
     }
 }
