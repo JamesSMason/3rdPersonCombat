@@ -1219,6 +1219,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 2081855430958274867}
   <CharacterController>k__BackingField: {fileID: 433910287}
   <Animator>k__BackingField: {fileID: 1986256705821169340}
+  <Targeter>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 6
   <RotationDamping>k__BackingField: 10
   MainCameraTransform: {fileID: 0}
@@ -1318,7 +1319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ae4f3673626b64b80cf6ae9fe0d9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
 --- !u!135 &3588880234792980508
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2262,7 +2262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5994235691745081009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalPosition: {x: 0, y: 1.616, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
