@@ -340,6 +340,16 @@ PrefabInstance:
       propertyPath: MainCameraTransform
       value: 
       objectReference: {fileID: 1419807801}
+    - target: {fileID: 5003111875579794209, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9342105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073049335886142064, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9342105
+      objectReference: {fileID: 0}
     - target: {fileID: 6073049335886142067, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -349,6 +359,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -1.4081404e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073049336164801848, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9342105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073049336474788448, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9342105
       objectReference: {fileID: 0}
     - target: {fileID: 6073049336474788451, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
@@ -368,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 6497904033957942537, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_Targets.Array.data[0].weight
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8341067857623872823, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
@@ -915,7 +935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915640557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.54, y: 4.85, z: 9.03}
+  m_LocalPosition: {x: -1.45, y: 4.85, z: 7.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

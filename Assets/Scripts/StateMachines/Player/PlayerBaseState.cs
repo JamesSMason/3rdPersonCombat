@@ -14,4 +14,15 @@ public abstract class PlayerBaseState : State
         Vector3 totalMove = motion + stateMachine.ForceReceiver.Movement;
         stateMachine.CharacterController.Move(totalMove * deltaTime);
     }
+
+    protected void FaceTarget()
+    {
+        if (stateMachine.Targeter.CurrentTarget == null) {  return; }
+
+        Vector3 targetDirection = stateMachine.Targeter.CurrentTarget.transform.position - stateMachine.transform.position;
+
+        targetDirection.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(targetDirection);
+    }
 }
