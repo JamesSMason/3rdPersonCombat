@@ -1203,7 +1203,7 @@ Transform:
   - {fileID: 8629961334271435935}
   - {fileID: 6685752314494205860}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1377814611465464877
 MonoBehaviour:
@@ -1226,6 +1226,10 @@ MonoBehaviour:
   <RotationDamping>k__BackingField: 10
   <CinemachineFreeLook>k__BackingField: {fileID: 0}
   <ForceReceiver>k__BackingField: {fileID: 7617623317077676132}
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: Attack1
+  - <AnimationName>k__BackingField: Attack2
+  - <AnimationName>k__BackingField: Attack3
   MainCameraTransform: {fileID: 0}
 --- !u!114 &2081855430958274867
 MonoBehaviour:
