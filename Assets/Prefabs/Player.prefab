@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 433910287}
   - component: {fileID: 7617623317077676132}
   - component: {fileID: 6651313119081964450}
+  - component: {fileID: 6340975572836957166}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1325,6 +1326,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLogic: {fileID: 8497120126959484241}
+--- !u!114 &6340975572836957166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326841937480960392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1d48ec68ea35d4a8e624f9d00b6b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &3403829942799243475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,6 +3079,8 @@ GameObject:
   m_Component:
   - component: {fileID: 16766324036291687}
   - component: {fileID: 2400052898311850466}
+  - component: {fileID: 2799879735291662934}
+  - component: {fileID: 2091409539341499727}
   m_Layer: 0
   m_Name: WeaponLogic
   m_TagString: Untagged
@@ -3095,12 +3111,41 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8497120126959484241}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 1.25
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2799879735291662934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497120126959484241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a76a5b245ca02499339dec15cf2a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 433910287}
+--- !u!54 &2091409539341499727
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497120126959484241}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8629176215333158994
 GameObject:
   m_ObjectHideFlags: 0
