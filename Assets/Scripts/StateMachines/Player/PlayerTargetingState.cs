@@ -5,7 +5,8 @@ public class PlayerTargetingState : PlayerBaseState
     public readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
     public readonly int TargetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
     public readonly int TargetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
-    private const float AnimatorDampTime = 0.1f;
+    private const float ANIMATOR_DAMP_TIME = 0.1f;
+    private const float CROSS_FADE_DURATION = 0.2f;
 
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -14,7 +15,7 @@ public class PlayerTargetingState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.InputReader.CancelEvent += OnCancel;
-        stateMachine.Animator.Play(TargetingBlendTreeHash);
+        stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CROSS_FADE_DURATION);
     }
 
     public override void Tick(float deltaTime)
@@ -64,21 +65,21 @@ public class PlayerTargetingState : PlayerBaseState
     {
         if (stateMachine.InputReader.MovementValue.y == 0)
         {
-            stateMachine.Animator.SetFloat(TargetingForwardSpeedHash, 0, AnimatorDampTime, deltaTime);
+            stateMachine.Animator.SetFloat(TargetingForwardSpeedHash, 0, ANIMATOR_DAMP_TIME, deltaTime);
         }
         else
         {
             float value = stateMachine.InputReader.MovementValue.y > 0 ? 1f : -1f;
-            stateMachine.Animator.SetFloat(TargetingForwardSpeedHash, value, AnimatorDampTime, deltaTime);
+            stateMachine.Animator.SetFloat(TargetingForwardSpeedHash, value, ANIMATOR_DAMP_TIME, deltaTime);
         }
         if (stateMachine.InputReader.MovementValue.x == 0)
         {
-            stateMachine.Animator.SetFloat(TargetingRightSpeedHash, 0, AnimatorDampTime, deltaTime);
+            stateMachine.Animator.SetFloat(TargetingRightSpeedHash, 0, ANIMATOR_DAMP_TIME, deltaTime);
         }
         else
         {
             float value = stateMachine.InputReader.MovementValue.x > 0 ? 1f : -1f;
-            stateMachine.Animator.SetFloat(TargetingRightSpeedHash, value, AnimatorDampTime, deltaTime);
+            stateMachine.Animator.SetFloat(TargetingRightSpeedHash, value, ANIMATOR_DAMP_TIME, deltaTime);
         }
     }
 }
