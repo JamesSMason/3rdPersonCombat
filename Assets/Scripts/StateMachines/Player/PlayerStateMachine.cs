@@ -17,12 +17,12 @@ public class PlayerStateMachine : StateMachine
 
     public Transform MainCameraTransform = null;
 
-    void Awake()
+    private void Awake()
     {
         MainCameraTransform = Camera.main.transform;
     }
 
-    void Start()
+    private void Start()
     {
         SwitchState(new PlayerFreeLookState(this));
     }

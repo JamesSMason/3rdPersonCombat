@@ -6,6 +6,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
     private const float ANIMATOR_DAMP_TIME = 0.1f;
     private const float CROSS_FADE_DURATION = 0.2f;
+
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
 
