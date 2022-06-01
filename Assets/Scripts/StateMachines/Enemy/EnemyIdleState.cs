@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    public readonly int LocomotionBlendTreeHash = Animator.StringToHash("LocomotionBlendTree");
+    public readonly int LocomotionBlendTreeHash = Animator.StringToHash("Locomotion");
     public readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private const float ANIMATOR_DAMP_TIME = 0.1f;
@@ -20,7 +20,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        stateMachine.Animator.SetFloat(SpeedHash, 0, ANIMATOR_DAMP_TIME, deltaTime);
+        stateMachine.Animator.SetFloat(SpeedHash, 0f, ANIMATOR_DAMP_TIME, deltaTime);
     }
 
     public override void Exit()
