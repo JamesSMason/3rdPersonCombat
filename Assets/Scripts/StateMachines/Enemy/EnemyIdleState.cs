@@ -22,7 +22,7 @@ public class EnemyIdleState : EnemyBaseState
     {
         Move(deltaTime);
 
-        if (IsInChaseRange())
+        if (IsInRange(stateMachine.PlayerChasingRange))
         {
             stateMachine.SwitchState(new EnemyChaseState(stateMachine));
             return;

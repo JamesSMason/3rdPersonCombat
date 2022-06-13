@@ -20,9 +20,20 @@ public abstract class EnemyBaseState : State
         stateMachine.CharacterController.Move(totalMove * deltaTime);
     }
 
-    protected bool IsInChaseRange()
+    protected void FacePlayer()
+    {
+        if (stateMachine.Player == null) { return; }
+
+        Vector3 targetDirection = stateMachine.Player.transform.position - stateMachine.transform.position;
+
+        targetDirection.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(targetDirection);
+    }
+
+    protected bool IsInRange(float range)
     {
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
-        return playerDistanceSqr <= stateMachine.PlayerChasingRange * stateMachine.PlayerChasingRange;
+        return playerDistanceSqr <= range * range;
     }
 }
