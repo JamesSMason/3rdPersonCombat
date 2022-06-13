@@ -20,7 +20,7 @@ public abstract class EnemyBaseState : State
         stateMachine.CharacterController.Move(totalMove * deltaTime);
     }
 
-    protected void FacePlayer()
+    protected void FacePlayer(float deltaTime)
     {
         if (stateMachine.Player == null) { return; }
 
@@ -28,7 +28,7 @@ public abstract class EnemyBaseState : State
 
         targetDirection.y = 0f;
 
-        stateMachine.transform.rotation = Quaternion.LookRotation(targetDirection);
+        stateMachine.transform.rotation = Quaternion.Lerp(stateMachine.transform.rotation, Quaternion.LookRotation(targetDirection), deltaTime * stateMachine.RotationDamping);
     }
 
     protected bool IsInRange(float range)

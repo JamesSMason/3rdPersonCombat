@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttackingState : EnemyBaseState
@@ -14,6 +12,7 @@ public class EnemyAttackingState : EnemyBaseState
 
     public override void Enter()
     {
+        stateMachine.Weapon.SetAttack(stateMachine.AttackDamage);
         stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TRANSITION_DURATION);
     }
 

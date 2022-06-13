@@ -20,7 +20,7 @@ public class PlayerAttackingState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         Move(deltaTime);
-        FaceTarget();
+        FaceTarget(deltaTime);
 
         float normalizedTime = GetNormalizedTime();
 

@@ -35,7 +35,7 @@ public class PlayerTargetingState : PlayerBaseState
 
         UpdateAnimator(deltaTime);
 
-        FaceTarget();
+        FaceTarget(deltaTime);
     }
 
     public override void Exit()
