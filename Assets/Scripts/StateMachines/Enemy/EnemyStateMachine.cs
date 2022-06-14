@@ -13,6 +13,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public float AttackRange { get; private set; } = 2f;
     [field: SerializeField] public float RotationDamping { get; private set; }
     [field: SerializeField] public int AttackDamage { get; private set; } = 20;
+    [field: SerializeField] public float AttackKnockback { get; private set; } = 5f;
 
     public GameObject Player;
 

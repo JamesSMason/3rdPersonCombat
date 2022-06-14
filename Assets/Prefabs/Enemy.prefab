@@ -355,6 +355,7 @@ MonoBehaviour:
   <AttackRange>k__BackingField: 1.5
   <RotationDamping>k__BackingField: 10
   <AttackDamage>k__BackingField: 20
+  <AttackKnockback>k__BackingField: 5
   Player: {fileID: 0}
 --- !u!114 &6431979994456601512
 MonoBehaviour:
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 3440538644693566587}
+  agent: {fileID: 7322645872287352794}
   drag: 0.3
 --- !u!195 &7322645872287352794
 NavMeshAgent:
