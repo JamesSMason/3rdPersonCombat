@@ -7,7 +7,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public CharacterController CharacterController { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Targeter Targeter { get; private set; }
-    [field: SerializeField] public WeaponDamage weaponDamage { get; private set; }
+    [field: SerializeField] public WeaponDamage WeaponDamage { get; private set; }
+    [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
@@ -25,5 +26,26 @@ public class PlayerStateMachine : StateMachine
     private void Start()
     {
         SwitchState(new PlayerFreeLookState(this));
+    }
+
+    private void OnEnable()
+    {
+        if (Health != null)
+        {
+            Health.OnTakeDamage += HandleTakeDamage;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (Health != null)
+        {
+            Health.OnTakeDamage -= HandleTakeDamage;
+        }
+    }
+
+    private void HandleTakeDamage()
+    {
+        SwitchState(new PlayerImpactState(this));
     }
 }

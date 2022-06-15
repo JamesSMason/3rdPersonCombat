@@ -350,6 +350,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 1242003609619001074}
   <Agent>k__BackingField: {fileID: 7322645872287352794}
   <Weapon>k__BackingField: {fileID: 3740251940371395702}
+  <Health>k__BackingField: {fileID: 2611456207211730357}
   <MovementSpeed>k__BackingField: 3
   <PlayerChasingRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5
@@ -372,6 +373,7 @@ MonoBehaviour:
   Controller: {fileID: 3440538644693566587}
   agent: {fileID: 7322645872287352794}
   drag: 0.3
+  impactMagnitudeCheck: 0.2
 --- !u!195 &7322645872287352794
 NavMeshAgent:
   m_ObjectHideFlags: 0
