@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    public readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
-    public readonly int TargetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
-    public readonly int TargetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
+    private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+    private readonly int TargetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
+    private readonly int TargetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
     private const float ANIMATOR_DAMP_TIME = 0.1f;
     private const float CROSS_FADE_DURATION = 0.2f;
 

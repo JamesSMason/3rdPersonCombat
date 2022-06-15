@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    public readonly int LocomotionBlendTreeHash = Animator.StringToHash("Locomotion");
-    public readonly int SpeedHash = Animator.StringToHash("Speed");
+    private readonly int LocomotionBlendTreeHash = Animator.StringToHash("Locomotion");
+    private readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private const float ANIMATOR_DAMP_TIME = 0.1f;
     private const float CROSS_FADE_DURATION = 0.2f;
