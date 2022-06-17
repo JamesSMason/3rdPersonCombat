@@ -6,7 +6,7 @@ public class PlayerDeadState : PlayerBaseState
 
     public override void Enter()
     {
-        // Death animation
+        stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);
     }
 

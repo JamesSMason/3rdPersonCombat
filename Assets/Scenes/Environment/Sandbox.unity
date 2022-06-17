@@ -348,32 +348,32 @@ PrefabInstance:
     - target: {fileID: 5003111875579794209, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7631578
+      value: 1.7171053
       objectReference: {fileID: 0}
     - target: {fileID: 6073049335886142064, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7631578
+      value: 1.7171053
       objectReference: {fileID: 0}
     - target: {fileID: 6073049335886142067, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -2.6884603e-10
+      value: 2.6884603e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6073049335886142067, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.4081396e-12
+      value: -1.4081396e-12
       objectReference: {fileID: 0}
     - target: {fileID: 6073049336164801848, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7631578
+      value: 1.7171053
       objectReference: {fileID: 0}
     - target: {fileID: 6073049336474788448, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7631578
+      value: 1.7171053
       objectReference: {fileID: 0}
     - target: {fileID: 6073049336474788451, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 6795378646464713210, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000017206378
+      value: 0.00000017206378
       objectReference: {fileID: 0}
     - target: {fileID: 8341067857623872823, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
         type: 3}
@@ -455,6 +455,21 @@ PrefabInstance:
       propertyPath: <WeaponDamage>k__BackingField
       value: 
       objectReference: {fileID: 1578058992}
+    - target: {fileID: 9063927025322865541, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<Damage>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063927025322865541, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<Knockback>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063927025322865541, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<Knockback>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a, type: 3}
@@ -2140,7 +2155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419807796}
-  m_LocalRotation: {x: 0.02337799, y: -0.000000017168308, z: 4.0145334e-10, w: 0.9997267}
+  m_LocalRotation: {x: 0.02337799, y: -0.000000017168308, z: 4.014529e-10, w: 0.9997267}
   m_LocalPosition: {x: 0, y: 5.846, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2472,6 +2487,42 @@ Transform:
   m_Father: {fileID: 1847395012}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2047771513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5850711041451975782, guid: a8c2b9eed3ada6a49bdbfeb1c16a4d9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 395195875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047771516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047771513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1001 &2060893654
 PrefabInstance:
   m_ObjectHideFlags: 0
