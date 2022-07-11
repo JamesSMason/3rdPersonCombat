@@ -22,6 +22,8 @@ public class EnemyAttackingState : EnemyBaseState
         {
             stateMachine.SwitchState(new EnemyChaseState(stateMachine));
         }
+
+        FacePlayer(deltaTime);
     }
 
     public override void Exit()

@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     private int health;
     private bool isInvulnerable = false;
 
+    public bool IsDead => health == 0;
+
     public event Action OnTakeDamage;
     public event Action OnDie;
 

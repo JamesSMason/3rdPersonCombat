@@ -18,11 +18,11 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public int AttackDamage { get; private set; } = 20;
     [field: SerializeField] public float AttackKnockback { get; private set; } = 5f;
 
-    public GameObject Player;
+    public Health Player;
 
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
         Agent.updatePosition = false;
         Agent.updateRotation = false;
