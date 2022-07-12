@@ -20,6 +20,17 @@ public abstract class EnemyBaseState : State
         stateMachine.CharacterController.Move(totalMove * deltaTime);
     }
 
+    protected void FacePlayer()
+    {
+        if (stateMachine.Player == null) { return; }
+
+        Vector3 targetDirection = stateMachine.Player.transform.position - stateMachine.transform.position;
+
+        targetDirection.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(targetDirection);
+    }
+
     protected void FacePlayer(float deltaTime)
     {
         if (stateMachine.Player == null) { return; }
