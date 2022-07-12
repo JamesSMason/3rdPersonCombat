@@ -15,6 +15,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CROSS_FADE_DURATION);
     }
 
@@ -43,6 +44,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
     private Vector3 CalculateMovement()
@@ -69,5 +71,10 @@ public class PlayerFreeLookState : PlayerBaseState
         if (!stateMachine.Targeter.SelectTarget()) { return; }
 
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+    }
+
+    private void OnJump()
+    {
+        stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
     }
 }

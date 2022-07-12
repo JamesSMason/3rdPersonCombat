@@ -1593,6 +1593,7 @@ MonoBehaviour:
   <DodgeDuration>k__BackingField: 0.1
   <DodgeLength>k__BackingField: 0.75
   <DodgeCooldown>k__BackingField: 1
+  <JumpForce>k__BackingField: 4
   <CinemachineFreeLook>k__BackingField: {fileID: 0}
   <ForceReceiver>k__BackingField: {fileID: 7617623317077676132}
   <Attacks>k__BackingField:
