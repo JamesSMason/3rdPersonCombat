@@ -1590,9 +1590,8 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 10
-  <DodgeDuration>k__BackingField: 0.1
-  <DodgeLength>k__BackingField: 0.75
-  <DodgeCooldown>k__BackingField: 1
+  <DodgeDuration>k__BackingField: 0.6
+  <DodgeLength>k__BackingField: 3
   <JumpForce>k__BackingField: 4
   <CinemachineFreeLook>k__BackingField: {fileID: 0}
   <ForceReceiver>k__BackingField: {fileID: 7617623317077676132}

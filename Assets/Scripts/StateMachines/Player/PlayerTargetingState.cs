@@ -8,9 +8,6 @@ public class PlayerTargetingState : PlayerBaseState
     private const float ANIMATOR_DAMP_TIME = 0.1f;
     private const float CROSS_FADE_DURATION = 0.2f;
 
-    private Vector2 dodgingDirectionInput;
-    private float remainingDodgeTime;
-
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -63,11 +60,9 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void OnDodge()
     {
-        if (Time.time - stateMachine.PreviousDodgeTime < stateMachine.DodgeCooldown) { return; }
+        if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
 
-        stateMachine.SetDodgeTime(Time.time);
-        dodgingDirectionInput = stateMachine.InputReader.MovementValue;
-        remainingDodgeTime = stateMachine.DodgeDuration;
+        stateMachine.SwitchState(new PlayerDodgingState(stateMachine, stateMachine.InputReader.MovementValue));
     }
 
     private void OnJump()
@@ -79,18 +74,8 @@ public class PlayerTargetingState : PlayerBaseState
     {
         Vector3 movement = new Vector3();
 
-        if (remainingDodgeTime > 0)
-        {
-            movement += stateMachine.transform.right * dodgingDirectionInput.x * stateMachine.DodgeLength / stateMachine.DodgeDuration;
-            movement += stateMachine.transform.forward * dodgingDirectionInput.y * stateMachine.DodgeLength / stateMachine.DodgeDuration;
-
-            remainingDodgeTime = Mathf.Max(remainingDodgeTime - deltaTime, 0);
-        }
-        else
-        {
-            movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
-            movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
-        }
+        movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
+        movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
 
         movement.y = 0f;
 
