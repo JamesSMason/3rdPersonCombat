@@ -18,6 +18,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public CinemachineFreeLook CinemachineFreeLook { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
+    [field: SerializeField] public LedgeDetector LedgeDetector { get; private set; }
     [field: SerializeField] public Attack[] Attacks { get; private set; }
     public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
