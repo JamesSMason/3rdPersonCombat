@@ -15,7 +15,7 @@ public class ForceReceiver : MonoBehaviour
 
     public Vector3 Movement => impact + Vector3.up * verticalVelocity;
 
-    void Update()
+    private void Update()
     {
         if (verticalVelocity < 0f && Controller.isGrounded)
         {
@@ -50,5 +50,11 @@ public class ForceReceiver : MonoBehaviour
     public void Jump(float jumpForce)
     {
         verticalVelocity += jumpForce;
+    }
+
+    public void Reset()
+    {
+        impact = Vector3.zero;
+        verticalVelocity = 0f;
     }
 }

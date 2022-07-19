@@ -15,12 +15,14 @@ public class PlayerFallingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
+        //stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
 
         momentum = stateMachine.CharacterController.velocity;
         momentum.y = 0;
 
         stateMachine.Animator.CrossFadeInFixedTime(FallHash, CROSS_FADE_DURATION);
+
+        stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
     }
 
     public override void Tick(float deltaTime)
@@ -37,6 +39,11 @@ public class PlayerFallingState : PlayerBaseState
 
     public override void Exit()
     {
+        stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
+    }
 
+    private void HandleLedgeDetect(Vector3 ledgeForward)
+    {
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward));
     }
 }
